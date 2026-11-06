@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بحث: JavaScript - كيف تتفاعل المواقع مع ضغطات المستخدم</title>
+<style>
+body {
+background-color: #ffffff;
+color: #1a1a1a;
+font-family: Arial, sans-serif;
+line-height: 1.8;
+margin: 40px;
+padding: 0;
+}
+h1 {
+color: #000000;
+border-bottom: 2px solid #333333;
+padding-bottom: 10px;
+}
+h2 {
+color: #222222;
+margin-top: 30px;
+border-right: 4px solid #333333;
+padding-right: 10px;
+}
+h3 {
+color: #444444;
+margin-top: 20px;
+}
+p {
+font-size: 16px;
+text-align: justify;
+}
+.student-info {
+background-color: #f9f9f9;
+padding: 15px;
+border: 1px solid #dddddd;
+border-radius: 4px;
+margin-bottom: 30px;
+}
+.student-info p {
+margin: 5px 0;
+}
+img {
+max-width: 100%;
+height: auto;
+display: block;
+margin: 25px auto;
+border: 1px solid #cccccc;
+padding: 5px;
+box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin: 20px 0;
+}
+th, td {
+border: 1px solid #444444;
+padding: 12px;
+text-align: right;
+}
+th {
+background-color: #f2f2f2;
+color: #000000;
+}
+code {
+background-color: #f4f4f4;
+padding: 2px 6px;
+border-radius: 4px;
+font-family: Consolas, monospace;
+direction: ltr;
+display: inline-block;
+}
+pre {
+background-color: #f4f4f4;
+padding: 15px;
+border-right: 4px solid #333333;
+overflow-x: auto;
+direction: ltr;
+text-align: left;
+}
+ul {
+padding-right: 20px;
+}
+li {
+margin-bottom: 10px;
+}
+a {
+color: #0066cc;
+text-decoration: none;
+font-weight: bold;
+}
+a:hover {
+text-decoration: underline;
+}
+</style>
+</head>
+<body>
+
+<h1>بحث بعنوان: JavaScript : كيف تتفاعل المواقع مع ضغطات المستخدم</h1>
+
+<div class="student-info">
+<p><strong>اسم الطالبة:</strong> آمال أشرف عبد الفتاح شويخ[span_0](start_span)[span_0](end_span)</p>
+<p><strong>السكشن:</strong> 24[span_1](start_span)[span_1](end_span)</p>
+<p><strong>الرقم الجامعي:</strong> 250010[span_2](start_span)[span_2](end_span)</p>
+<p><strong>إشراف الدكتورة:</strong> مها زغلول[span_3](start_span)[span_3](end_span)</p>
+</div>
+
+<h2>أولاً: المقدمة</h2>
+
+<p>
+في بداية ظهور الإنترنت في التسعينيات كانت المواقع عبارة عن صفحات ثابتة فيها نصوص وصور فقط. كان الزائر يقرأ المحتوى وينتقل بين الصفحات عن طريق الروابط، ولا يحدث أي تفاعل حقيقي بينه وبين الموقع. ومع زيادة احتياج المستخدمين لتجربة أسهل وأسرع ظهرت الحاجة إلى لغة تجعل الصفحة تتجاوب مع ما يفعله الزائر، فظهرت لغة <strong>جافا سكريبت (JavaScript)</strong> وأصبحت جزءاً أساسياً من الويب[span_4](start_span)[span_4](end_span).
+</p>
+
+<p>
+جافا سكريبت هي اللغة الوحيدة التي تعمل مباشرة داخل المتصفح على جهاز المستخدم دون برامج إضافية. وتستطيع الرد على أفعال المستخدم فوراً، مثل الضغط على زر أو تحريك الفأرة أو كتابة نص أو اختيار عنصر، ودون إعادة تحميل الصفحة كلها في كل مرة[span_5](start_span)[span_5](end_span).
+</p>
+
+<p>
+يهدف هذا البحث إلى توضيح كيف تحقق جافا سكريبت هذا التفاعل مع شرح نظام الأحداث ومستمعات الأحداث وطريقة التعامل معها داخل المتصفح، ثم عرض أمثلة عملية توضح أثر ذلك على تجربة المستخدم[span_6](start_span)[span_6](end_span).
+</p>
+
+<img src="javascript-events.jpg" alt="صورة توضيحية لتفاعل جافا سكريبت مع الأحداث ومستمعات الأحداث في الويب">
+
+<h2>ثانياً: الشرح</h2>
+
+<h3>1. جافا سكريبت وبنية صفحة الويب</h3>
+
+<p>
+تنفذ جافا سكريبت بواسطة محرك مدمج في المتصفح. وتُبنى صفحة الويب من ثلاث لغات تعمل معاً: لغة <strong>HTML</strong> وتحدد هيكل الصفحة من فقرات وعناوين وأزرار وجداول، ولغة <strong>CSS</strong> وتتحكم في الشكل من ألوان وخطوط ومسافات، أما <strong>جافا سكريبت</strong> فهي التي تضيف الحركة وتحدد كيف تستجيب الصفحة لما يفعله المستخدم[span_7](start_span)[span_7](end_span).
+</p>
+
+<p>
+وتعتمد المواقع التفاعلية على ما يسمى <strong>نموذج كائنات المستند (DOM)</strong>، وهو تمثيل شجري لكل عناصر الصفحة من أزرار ونصوص وصور ونماذج. وتستطيع جافا سكريبت الوصول إلى أي عنصر في هذه الشجرة وتغيير محتواه أو شكله في لحظتها حسب تصرف الزائر[span_8](start_span)[span_8](end_span).
+</p>
+
+<h3>2. الأحداث ومستمعات الأحداث</h3>
+
+<p>
+حتى يعرف الموقع ما يفعله الزائر يعتمد على ثلاثة أشياء مترابطة: <strong>الحدث</strong>، و<strong>مستمع الحدث</strong>، و<strong>دالة المعالجة</strong>[span_9](start_span)[span_9](end_span).
+</p>
+
+<h4>أ. أنواع الأحداث الرئيسية:</h4>
+
+<table>
+<tr>
+<th>فئة الحدث</th>
+<th>اسم الحدث (Event)</th>
+<th>وصف الحدث وتأثيره</th>
+</tr>
+<tr>
+<td><strong>الفأرة واللمس</strong></td>
+<td><code>click</code>, <code>dblclick</code>, <code>mouseover</code>, <code>mouseout</code>, <code>mousemove</code></td>
+<td>يتحقق عند النقر على عنصر، النقر المزدوج، دخول المؤشر على العنصر، خروجه منه، أو حركة الفأرة[span_10](start_span)[span_10](end_span).</td>
+</tr>
+<tr>
+<td><strong>لوحة المفاتيح</strong></td>
+<td><code>keydown</code>, <code>keyup</code></td>
+<td>يتحقق عند الضغط على مفتاح في لوحة المفاتيح أو رفع اليد عنه[span_11](start_span)[span_11](end_span).</td>
+</tr>
+<tr>
+<td><strong>النماذج (Forms)</strong></td>
+<td><code>submit</code>, <code>change</code>, <code>focus</code>, <code>blur</code></td>
+<td>يتحقق عند إرسال النموذج، تغيير قيمة حقل، الضغط داخل الحقل، أو الخروج منه[span_12](start_span)[span_12](end_span).</td>
+</tr>
+<tr>
+<td><strong>نافذة المتصفح</strong></td>
+<td><code>scroll</code>, <code>resize</code></td>
+<td>يتحقق عند التمرير لأعلى وأسفل أو عند تغيير حجم نافذة المتصفح[span_13](start_span)[span_13](end_span).</td>
+</tr>
+</table>
+
+<h4>ب. مستمعات الأحداث ودوال المعالجة:</h4>
+
+<p>
+مستمع الحدث هو أمر يربط عنصراً في الصفحة بكود معين، ويظل يراقب العنصر. وعندما يقع الحدث المطلوب، مثل الضغط على زر، تُنفذ دالة المعالجة فوراً وتغير ما يلزم على الشاشة. والمثال التالي يوضح الفكرة[span_14](start_span)[span_14](end_span):
+</p>
+
+<pre><code>const btn = document.querySelector("#menuBtn");
+btn.addEventListener("click", function () {
+    document.querySelector("#menu").classList.toggle("visible");
+});</code></pre>
+
+<h2>ثالثاً: أمثلة تطبيقية</h2>
+
+<ul>
+<li><strong>1. القوائم المنسدلة:</strong> عند الضغط على زر "القائمة الرئيسية" يلتقط المتصفح حدث النقر، فتغير جافا سكريبت حالة القائمة من مخفية إلى ظاهرة. كل هذا يحدث على جهاز المستخدم دون انتظار أو إعادة تحميل للصفحة[span_15](start_span)[span_15](end_span).</li>
+<li><strong>2. فحص بيانات النماذج:</strong> أثناء كتابة البريد الإلكتروني أو كلمة المرور في استمارة التسجيل، يقرأ الكود ما يكتبه المستخدم مع كل ضغطة مفتاح. فإذا كان البريد غير صحيح أو كلمة المرور قصيرة، يتحول إطار الحقل إلى اللون الأحمر ويظهر تنبيه تحته قبل إرسال الاستمارة، وبذلك يوفر الوقت ويمنع إرسال بيانات خاطئة[span_16](start_span)[span_16](end_span).</li>
+<li><strong>3. تغيير المظهر (فاتح وداكن):</strong> عند الضغط على زر تغيير المظهر تعدل جافا سكريبت الأنماط المطبقة على عناصر الصفحة، فتتحول الخلفيات من الفاتح إلى الداكن وتتغير ألوان النصوص لتناسب القراءة ليلاً في لحظات[span_17](start_span)[span_17](end_span).</li>
+<li><strong>4. تحديث المحتوى دون إعادة تحميل:</strong> في مواقع التواصل الاجتماعي عند الضغط على زر الإعجاب أو إضافة تعليق، ترسل جافا سكريبت الطلب إلى الخادم في الخلفية لتحديث البيانات، وفي نفس الوقت يزيد عداد الإعجابات ويتغير لون الزر ويظهر التعليق أمام الزائر دون أن تتوقف تجربته[span_18](start_span)[span_18](end_span).</li>
+</ul>
+
+<h2>رابعاً: أثر التفاعل على تجربة المستخدم</h2>
+
+<ul>
+<li><strong>السرعة:</strong> المعالجة تتم داخل المتصفح، فيقل وقت الانتظار ويصبح التصفح أسلس[span_19](start_span)[span_19](end_span).</li>
+<li><strong>تخفيف الحمل على الخادم:</strong> فحص البيانات والتغييرات الشكلية تتم على جهاز الزائر فيقل عدد الطلبات المرسلة عبر الشبكة[span_20](start_span)[span_20](end_span).</li>
+<li><strong>زيادة التفاعل:</strong> استجابة الموقع السريعة تجعل استخدامه أكثر راحة، فيبقى الزائر فترة أطول ويتفاعل مع المحتوى[span_21](start_span)[span_21](end_span).</li>
+</ul>
+
+<h2>خامساً: الخاتمة</h2>
+
+<p>
+يتضح مما سبق أن جافا سكريبت هي التي تحول صفحة الويب من مجرد محتوى للقراءة إلى صفحة تتفاعل مع المستخدم. فهي تعتمد على الأحداث التي يرسلها المتصفح، وعلى مستمعات الأحداث التي تراقب العناصر، وعلى دوال المعالجة التي تنفذ التغيير المطلوب، وكل ذلك عن طريق التعامل مع عناصر الصفحة من خلال نموذج <strong>DOM</strong>[span_22](start_span)[span_22](end_span).
+</p>
+
+<p>
+وقد ظهر من الأمثلة أن هذا التفاعل يظهر في أشياء نستخدمها كل يوم، مثل القوائم وفحص النماذج وتغيير المظهر والإعجابات وهو يفيد المستخدم لأنه يوفر وقته ويجعل الموقع أسهل، ويفيد الموقع لأنه يقلل الحمل على الخادم ويزيد بقاء الزوار. لذلك يُعد فهم الأحداث ومستمعاتها خطوة أساسية لأي شخص يريد تعلم تطوير مواقع الويب[span_23](start_span)[span_23](end_span).
+</p>
+
+<h2>سادساً: المراجع والمصادر</h2>
+
+<ul>
+<li>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">MDN Web Docs (شبكة مطوري موزيلا) - التوثيق الرسمي لنموذج كائنات المستند (DOM) والأحداث ومستمعات الأحداث[span_24](start_span)[span_24](end_span)</a>
+</li>
+<li>
+<a href="https://www.w3.org/TR/dom/" target="_blank">مواصفات منظمة الويب العالمية (W3C) ومعيار DOM الصادر عن WHATWG[span_25](start_span)[span_25](end_span)</a>
+</li>
+<li>
+<a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/" target="_blank">Ecma International - مواصفة لغة ECMAScript الصادرة عن منظمة إكما[span_26](start_span)[span_26](end_span)</a>
+</li>
+</ul>
+
+</body>
+  </html>
